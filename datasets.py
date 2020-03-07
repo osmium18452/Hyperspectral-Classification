@@ -42,7 +42,7 @@ DATASETS_CONFIG = {
 	'IndianPines': {
 		'urls': ['http://www.ehu.eus/ccwintco/uploads/6/67/Indian_pines_corrected.mat',
 		         'http://www.ehu.eus/ccwintco/uploads/c/c4/Indian_pines_gt.mat'],
-		'img': 'Indian_pines_corrected.mat',
+		'img': 'Indian_pines.mat',
 		'gt': 'Indian_pines_gt.mat'
 	},
 	'Botswana': {
