@@ -52,14 +52,14 @@ DATASETS_CONFIG = {
 		'gt': 'Botswana_gt.mat',
 	},
 	'Salinas': {
-		'urls': ['',
-		         ''],
+		'urls': ['http://www.ehu.eus/ccwintco/uploads/a/a3/Salinas_corrected.mat',
+		         'http://www.ehu.eus/ccwintco/uploads/f/fa/Salinas_gt.mat'],
 		'img': 'Salinas_corrected.mat',
 		'gt': 'Salinas_gt.mat',
 	},
 	'SalinasA': {
-		'urls': ['',
-		         ''],
+		'urls': ['http://www.ehu.eus/ccwintco/uploads/1/1a/SalinasA_corrected.mat',
+		         'http://www.ehu.eus/ccwintco/uploads/a/aa/SalinasA_gt.mat'],
 		'img': 'SalinasA_corrected.mat',
 		'gt': 'SalinasA_gt.mat',
 	}
