@@ -120,9 +120,9 @@ args = parser.parse_args()
 IMG_DIR=os.path.join(args.directory,"img")
 DATA_DIR=os.path.join(args.directory,"data")
 if not os.path.exists(IMG_DIR):
-    os.mkdir(IMG_DIR)
+    os.makedirs(IMG_DIR)
 if not os.path.exists(DATA_DIR):
-    os.mkdir(DATA_DIR)
+    os.makedirs(DATA_DIR)
 
 CUDA_DEVICE = get_device(args.cuda)
 
