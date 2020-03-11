@@ -18,6 +18,7 @@ from __future__ import division
 import torch
 import torch.utils.data as data
 from torchsummary import summary
+import pickle as pkl
 
 # Numpy, scipy, scikit-image, spectral
 import numpy as np
@@ -111,10 +112,13 @@ parser.add_argument('--with_exploration', action='store_true',
 parser.add_argument('--download', type=str, default=None, nargs='+',
                     choices=dataset_names,
                     help="Download the specified datasets and quits.")
+parser.add_argument("--directory",default="save")
 
 
 
 args = parser.parse_args()
+IMG_DIR=os.path.join(args.directory,"img")
+DATA_DIR=os.path.join(args.directory,"data")
 
 CUDA_DEVICE = get_device(args.cuda)
 
@@ -315,7 +319,12 @@ for run in range(N_RUNS):
             pass
 
         probabilities = test(model, img, hyperparams)
+        with open(os.path.join(DATA_DIR,"probmap.pkl"),"wb") as f:
+            pkl.dump(probabilities,f)
         prediction = np.argmax(probabilities, axis=-1)
+
+    with open(os.path.join(DATA_DIR,"predmap.pkl"),"wb") as f:
+        pkl.dump(prediction,f)
 
     run_results = metrics(prediction, test_gt, ignored_labels=hyperparams['ignored_labels'], n_classes=N_CLASSES)
 
