@@ -331,6 +331,7 @@ for run in range(N_RUNS):
         pkl.dump(prediction,f)
 
     run_results = metrics(prediction, test_gt, ignored_labels=hyperparams['ignored_labels'], n_classes=N_CLASSES)
+    print(run_results,"*************************")
 
     mask = np.zeros(gt.shape, dtype='bool')
     for l in IGNORED_LABELS:
